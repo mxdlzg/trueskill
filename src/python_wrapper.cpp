@@ -73,6 +73,16 @@ static PyMethodDef functions[] = {
 	{NULL, NULL}
 };
 
-PyMODINIT_FUNC init_trueskill(void) {
-	Py_InitModule4("_trueskill", functions, "trueskill module", NULL, PYTHON_API_VERSION);
+static struct PyModuleDef trueskillModule = {
+        PyModuleDef_HEAD_INIT,
+        "trueskill_cpp",
+        NULL,
+        -1,
+        functions
+};
+
+PyMODINIT_FUNC PyInit_trueskill_cpp(void) {
+        /*Py_Initialize("_trueskill", functions, "trueskill module", NULL, PYTHON_API_VERSION);*/
+        return PyModule_Create(&trueskillModule);
 }
+
