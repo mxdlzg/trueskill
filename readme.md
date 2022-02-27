@@ -1,3 +1,5 @@
+## Rename to trueskill_cpp and build with python3
+
 another trueskill implementation; c++ with wrappers for python
 
 This is a port of [dougz/trueskill](https://github.com/dougz/trueskill)
