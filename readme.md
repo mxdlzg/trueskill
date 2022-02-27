@@ -8,13 +8,14 @@ from python to c++;
 running
 =======
 
-You have two options:
+You have three options:
 
 1. run ``make`` in the root directory and launch the program
    via ``bin/runner``
 2. run ``python setup.py build_ext -i`` to create the ``.so``
    file, and run the python test sample via ``python ptest.py``
-
+3. run ``python setup.py install`` to install the module, and run the python test sample via ``python ptest.py``\
+  
 benchmark
 =========
 
