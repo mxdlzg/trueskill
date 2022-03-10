@@ -173,7 +173,7 @@ public:
 
 class TrueSkill {
 public:
-  void adjust_players(std::vector<Player*> players);
+  static void adjust_players(std::vector<Player*> players);
 };
 
 void simple_example();

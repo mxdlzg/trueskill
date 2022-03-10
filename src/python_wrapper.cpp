@@ -46,8 +46,7 @@ static PyObject* _adjust_players(PyObject* self, PyObject* args) {
 	}
 
 	// run trueskill on the players
-	TrueSkill ts;
-	ts.adjust_players(players);
+	TrueSkill::adjust_players(players);
 
 	// create the result list
 	PyObject* result = PyList_New(size);
@@ -60,9 +59,13 @@ static PyObject* _adjust_players(PyObject* self, PyObject* args) {
 		PyTuple_SetItem(py_tuple, 1, PyFloat_FromDouble(players[i]->sigma));
 		PyTuple_SetItem(py_tuple, 2, PyInt_FromLong((long)players[i]->rank));
 
+		delete players[i];
+
 		// push the tuple onto the list
 		PyList_SetItem(result, i, py_tuple);
 	}
+
+	Py_DECREF(seq);
 
 	// return the list
 	return result;
