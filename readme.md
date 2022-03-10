@@ -15,6 +15,12 @@ You have three options:
 2. run ``python setup.py build_ext -i`` to create the ``.so``
    file, and run the python test sample via ``python ptest.py``
 3. run ``python setup.py install`` to install the module, and run the python test sample via ``python ptest.py``\
+
+dev
+=======
+For main.cpp:
+
+1. /usr/bin/g++ -g /home/mxdlzg/Download/tk/src/*.cpp `python3-config --cflags --embed` -o /home/mxdlzg/Download/tk/src/main -I /opt/anaconda3/include/python3.8
   
 benchmark
 =========
