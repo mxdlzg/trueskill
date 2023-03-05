@@ -145,9 +145,9 @@
  * Copyright 1984, 1987, 1988, 1992 by Stephen L. Moshier
  * Direct inquiries to 30 Frost Street, Cambridge, MA 02140
  */
-
+#define _USE_MATH_DEFINES
 #include <float.h>		/* DBL_EPSILON */
-#include <math.h>		/* exp */
+#include <cmath>		/* exp */
 #include "polevl.h"
 
 extern double SQRTH;

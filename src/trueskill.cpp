@@ -66,7 +66,7 @@ double Gaussian::get_sigma() {
 
 std::ostream& operator<<(std::ostream &strm, const Gaussian &g) {
   double mu = 0.0;
-  double sigma = 1.0 / 0.0;
+  double sigma = 1.0;
   if (g.pi != 0.0) {
 	sigma = sqrt(1.0 / g.pi);
 	mu = g.tau / g.pi;

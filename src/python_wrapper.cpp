@@ -39,7 +39,7 @@ static PyObject* _adjust_players(PyObject* self, PyObject* args) {
 		// convert the tuple items into their c types
 		p->mu = PyFloat_AsDouble(PyTuple_GetItem(py_tuple, 0));
 		p->sigma = PyFloat_AsDouble(PyTuple_GetItem(py_tuple, 1));
-		p->rank = (int)PyInt_AsLong(PyTuple_GetItem(py_tuple, 2));
+		p->rank = (int)PyLong_AsLong(PyTuple_GetItem(py_tuple, 2));
 
 		// add the player to the players vector
 		players.push_back(p);
@@ -57,7 +57,7 @@ static PyObject* _adjust_players(PyObject* self, PyObject* args) {
 		py_tuple = PyTuple_New(3);
 		PyTuple_SetItem(py_tuple, 0, PyFloat_FromDouble(players[i]->mu));
 		PyTuple_SetItem(py_tuple, 1, PyFloat_FromDouble(players[i]->sigma));
-		PyTuple_SetItem(py_tuple, 2, PyInt_FromLong((long)players[i]->rank));
+		PyTuple_SetItem(py_tuple, 2, PyLong_FromLong((long)players[i]->rank));
 
 		delete players[i];
 
